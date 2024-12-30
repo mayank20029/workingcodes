@@ -1,4 +1,4 @@
-# Logistic Regression
+# K-Nearest Neighbors (K-NN)
 
 # Importing the libraries
 import numpy as np
@@ -20,9 +20,9 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Training the Logistic Regression model on the Training set
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state = 0)
+# Training the K-NN model on the Training set
+from sklearn.neighbors import KNeighborsClassifier
+classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
 classifier.fit(X_train, y_train)
 
 # Making the Confusion Matrix
